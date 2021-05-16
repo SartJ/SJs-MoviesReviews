@@ -1,0 +1,48 @@
+{% extends 'main/base.html'  %}
+
+
+
+{% block content %}
+
+<br><br>
+<div class="container" style="background-color: #a7d129">
+    <br>
+    <div class="card" style="background-color: #a7d129">
+        <div class="card-body" style="background-color: #3e3636">
+
+                <center>
+                    <H1 style="color: white">Edit Review</H1>
+
+                <br><br>
+
+                <form action="" method=POST style="color: white">
+                    {% csrf_token %}
+
+                    {{ form.as_p }}
+
+                    {% if error %}
+                        <strong style="color: red;">{{ error }}</strong><br><br>
+                    {% endif %}
+                    <input type="submit" value="Save Changes" class="btn btn-success">
+
+                </form>
+                </center>
+        </div>
+    </div>
+    <br>
+</div>
+
+<!-- <div class="container">
+    <div class="card">
+        <div class="card-content">
+            <h3 class="text-center">Add Movie</h3>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Add Movies">
+            </form>
+        </div>
+    </div>
+</div> -->
+
+{% endblock %}

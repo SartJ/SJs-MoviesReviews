@@ -1,0 +1,51 @@
+{% extends 'main/base.html'  %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<br><br>
+<div class="container" style="background-color: #a7d129">
+    <br>
+    <div class="card" style="background-color: #a7d129">
+        <div class="card-body" style="background-color: #3e3636">
+
+                <center>
+                    <H1 style="color: white">Register An Account</H1>
+
+                <br><br>
+                {% if submitted %}
+                    <h3 style="color: white">Thanks!! Your Registration was Successfully!!!</h3>
+                {% else %}
+
+
+                <form action="" method=POST style="color: white">
+                    {% csrf_token %}
+
+                    <!-- {{ form.as_p }} -->
+                    {{ form|crispy }}
+
+                    <input type="submit" value="Register" class="btn btn-success">
+
+                </form>
+                {% endif %}
+                </center>
+        </div>
+    </div>
+    <br>
+</div>
+
+<!-- <div class="container">
+    <div class="card">
+        <div class="card-content">
+            <h3 class="text-center">Add Movie</h3>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Add Movies">
+            </form>
+        </div>
+    </div>
+</div> -->
+
+{% endblock %}

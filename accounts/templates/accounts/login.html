@@ -1,0 +1,44 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<br><br>
+<div class="container" style="background-color: #a7d129">
+    <br>
+    <div class="card" style="background-color: #a7d129">
+        <div class="card-body" style="background-color: #3e3636">
+
+                <center>
+                    <H1 style="color: white">Login to your account:</H1>
+
+                <br><br>
+                <!-- {% if submitted %}
+                    <h3 style="color: white">Thanks!! Your Registration was Successfully!!!</h3>
+                {% else %} -->
+
+
+                <form action="" method=POST style="color: white">
+                    {% csrf_token %}
+
+
+
+
+                    <input type="text" placeholder="Enter your username" class="form-control" name="username">
+                    <br>
+                    <input type="password" placeholder="Enter your password" class="form-control" name="password">
+                    <br>
+                    {% if error %}
+                        <i style="color: red;"><strong>{{ error }}</strong></i><br><br>
+                    {% endif %}
+
+                    <input type="submit" value="Login" class="btn btn-success" >
+
+                </form>
+                <!-- {% endif %} -->
+                </center>
+        </div>
+    </div>
+    <br>
+</div>
+
+{% endblock %}
